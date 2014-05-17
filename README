@@ -1,0 +1,21 @@
+/************************************************************
+ * Author        : song
+ * Email         : song11210312@126.com
+ * Last modified : 2014-05-15 13:48
+ * Filename      : README
+ * Description   : 
+ * **********************************************************/
+
+参考cvim，写的关于“关键字补全“的插件，目前只适合C/C++语言，
+可以把相关库的常用函数、类型以及常量作为关键字，写入到相应的文件中，
+并在plugin目录下的c.vim中加入该文件，这样该文件中的关键字便得以补全。
+if !exists("g:C_Dictionary_File")               "加入自己的关键字列表，比如glib库德关键字列表，别忘了关键字文件后面  逗号  的有无
+   let g:C_Dictionary_File = s:plugin_dir.'/c-support/wordlists/c-c++-keywords.list,'.
+        \                   s:plugin_dir.'/c-support/wordlists/k+r.list,'.
+        \                   s:plugin_dir.'/c-support/wordlists/stl_index.list,'.
+        \                   s:plugin_dir.'/c-support/wordlists/glib-keywords.list'
+"       \                   s:plugin_dir.'/c-support/wordlists/gtk3.0-keywords.list'
+
+
+添加了cpp.vim，使syntax功能增强，顺便把该cpp.vim中的关键字变成了stl
+关键字补全的字库，从而增加了变成的方便性。
